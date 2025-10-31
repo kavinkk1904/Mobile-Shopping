@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybertron Mobiles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Exo 2", sans-serif;
+        }
+
+        body {
+            padding-top: 80px;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        nav {
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            background-color: rgb(178, 29, 29);
+            border-bottom: 1px solid rgb(178, 29, 29);
+
+        }
+
+        .logo {
+            font-size: 25px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .hov {
+            color: white;
+        }
+
+        .hov:hover {
+            color: black;
+        }
+
+        ol li {
+            list-style: none;
+            display: inline-block;
+            padding: 10px 20px;
+        }
+
+
+        .abd {
+            padding: 9px 25px;
+            background: linear-gradient(to right, rgb(192, 213, 217), rgb(118, 202, 235));
+            border-radius: 30px;
+            transition: 0.3s;
+            margin-right: 0.8cm;
+        }
+
+        .abd:hover {
+            transform: scale(1.1);
+        }
+
+        .container1 {
+            display: flex;
+            background-color: whitesmoke;
+            border: 2px solid lightgray;
+            border-radius: 10px;
+            padding: 30px;
+            width: 70%;
+            max-width: 450px;
+            font-family: Arial, sans-serif;
+        }
+
+        .container2 {
+            font-size: 14px;
+            color: black;
+        }
+
+        .container3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+        }
+
+        .container3 img {
+            max-width: 100%;
+            height: auto;
+            max-height: 200px;
+            transition: 0.3s;
+        }
+
+        .container3 img:hover {
+            transform: scale(1.7);
+        }
+
+        .button {
+            display: inline-block;
+            border: 2px solid black;
+            border-radius: 20px;
+            color: white;
+            background-color: black;
+            padding: 4px;
+            font-size: 10px;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .bagbutton {
+            display: inline-block;
+            border: 2px solid black;
+            border-radius: 20px;
+            color: white;
+            background-color: black;
+            padding: 4px;
+            font-size: 10px;
+            transition: 0.2s;
+        }
+
+        .bagbutton:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .wishlistbutton {
+            display: inline-block;
+            border: 2px solid black;
+            border-radius: 20px;
+            color: white;
+            background-color: black;
+            padding: 4px;
+            font-size: 10px;
+            transition: 0.2s;
+        }
+
+        .wishlistbutton:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .under {
+            text-decoration: underline;
+            font-size: 9px;
+        }
+
+        span {
+            color: red;
+        }
+
+        .flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .head {
+            padding: 20px;
+        }
+
+        .head h2 {
+            border: 2px solid black;
+            border-radius: 30px;
+            margin-left: 45%;
+            padding: 10px;
+            background-color: black;
+            color: white;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .head h3 {
+            margin-left: 45%;
+        }
+
+        .head h2:hover {
+            background-color: white;
+            color: black;
+            cursor: pointer;
+        }
+
+        .footertag {
+            font-size: 15px;
+            background-color: black;
+            color: white;
+            padding: 25px;
+        }
+
+        .pay p,
+        .social p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .socialfont i {
+            font-size: 15px;
+            margin-right: 10px;
+        }
+
+        .termdetails {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .details p {
+            margin-bottom: 10px;
+        }
+
+        .hov {
+            transition: 0.2s;
+        }
+
+        .hov input {
+            width: 100%;
+            border: 0px solid red;
+            border-radius: 20px;
+            padding: 10px 15px;
+            outline: none;
+        }
+
+        .hovsearch input {
+            width: 100%;
+            border: 0px solid red;
+            border-radius: 20px;
+            padding: 10px 15px;
+            outline: none;
+            background-color: rgb(233, 215, 215);
+            opacity: 0.7;
+        }
+
+        .background {
+            background-image: url("Advertising.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 450px;
+            display: flex;
+            align-items: center;
+        }
+
+        .background p {
+            color: white;
+            margin: 30px;
+            position: static;
+            padding: 30px;
+            font-size: 20px;
+            background-attachment: fixed;
+            text-shadow: 12px 5px 13px black;
+        }
+
+        .link {
+            color: rgb(0, 174, 255);
+            text-decoration: underline;
+        }
+
+        .bottom {
+            display: flex;
+            gap: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .copyright {
+            text-align: center;
+        }
+
+        .dots {
+            cursor: pointer;
+            display: none;
+        }
+
+        .dotsline {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin-top: 5px;
+            margin-bottom: 3px;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        @media all and (max-width:640px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav li {
+                display: block;
+                padding: 10px 10px;
+            }
+
+            ol {
+                text-align: center;
+                padding: 0;
+                display: none;
+            }
+
+            .logo {
+                align-self: flex-start;
+                margin: 10px 0px 0px 30px;
+            }
+
+            .dots {
+                display: block;
+                position: absolute;
+                right: 25px;
+                top: 25px;
+                margin-right: 10px;
+            }
+
+            .showmenu {
+                display: block;
+            }
+
+        }
+
+        .sidepanel {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 350px;
+            height: 100%;
+            background-color: white;
+            transition: right 0.5s ease;
+            padding: 20px;
+        }
+
+        .sidepanel.open {
+            right: 0;
+        }
+
+        .xbutton {
+            background-color: red;
+            color: white;
+            border: 2px solid red;
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            float: right;
+        }
+
+        .xbutton:hover {
+            background-color: white;
+            color: red;
+            transition: 0.3s;
+        }
+
+        .bagtitle {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0 0 20px;
+        }
+
+        .checkoutbutton {
+            border: 1px solid yellowgreen;
+            border-radius: 10px;
+            background-color: yellowgreen;
+            color: white;
+            font-size: 15px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .checkoutbutton:hover {
+            background-color: white;
+            color: yellowgreen;
+            transition: 0.3s;
+            transform: scale(1.1);
+        }
+
+        .sidepanel {
+            text-align: center;
+        }
+
+        .dark {
+            background-color: rgb(32, 30, 30);
+            color: white;
+        }
+
+        .dark .footertag {
+            background-color: rgb(48, 45, 45);
+            color: white;
+        }
+
+        .dark {
+            background-color: rgb(38, 34, 34);
+            border-color: rgb(41, 36, 36);
+            color: black;
+        }
+
+        
+
+        .bdrtop {
+            border-top: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="#Cybertron Mobile" class="logo">Cybertron Mobiles</a>
+        <nav>
+            <div class="navsize" id="navMenu">
+                <ol>
+                    <li><a href="#Home" class="hov">Home</a></li>
+                    <li><a href="#Store" class="hov">Store</a></li>
+                    <li><a href="#Services" class="hov">Services</a></li>
+                    <li><a href="About us" class="hov">About us</a></li>
+                    <li>
+                        <a href="#search" class="hovsearch">
+                            <input type="search" placeholder="Search" style="text-align: center;">
+                        </a>
+                    </li>
+                    <li>
+                        <div class="bag" id="baggage1">
+                            <a href="#cart" class="hov" id="baggage2"><i class="bi bi-bag"></i>&nbsp;&nbsp;<i
+                                    class="bi bi-0-circle"></i>&nbsp;&nbsp;Bag</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="wishlist">
+                            <a href="#wishlist" class="hov"><i class="bi bi-heart-fill"></i>&nbsp;&nbsp;<i
+                                    class="bi bi-0-circle"></i>&nbsp;&nbsp;Wishlist</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#mode" class="hov" id="darkMode"><i
+                                class="bi bi-brightness-high"></i>&nbsp;&nbsp;Theme</a>
+                    </li>
+
+
+                </ol>
+            </div>
+
+            <a href="#Contact us" class="abd">Contact us</a>
+
+            <div class="dots" id="menuToggle">
+                <div class="dotsline"></div>
+                <div class="dotsline"></div>
+                <div class="dotsline"></div>
+            </div>
+
+        </nav>
+
+    </header>
+
+    <div class="sidepanel" id="sidebag">
+        <button class="xbutton" id="closebutton">X</button>
+        <h2 class="bagtitle">Bag</h2>
+        <ul id="items"></ul>
+        <p class="bdrtop"></p>
+        <br>
+        <p id="totalAmount">Total: Rs.0</p>
+        <br>
+        <button class="checkoutbutton" id="chckbtn">Checkout</button>
+    </div>
+
+
+    <div class="background">
+        <p>
+            Welcome to Cybertron Mobiles Where Innovation Meets Affordability!<br>
+            <br>
+            Latest Mobile Deals | Unbeatable Prices | Flagship Mobiles<br>
+            <br>
+            Looking for Edge-Display smartphones without breaking the bank?<br>
+            <br>
+            Cybertron Mobiles brings you a powerful lineup of mobile phones packed with:<br>
+        </p>
+    </div>
+
+    <section class="head">
+        <h2> Explore Now</h2>
+        <br>
+        <br>
+        <h3>Our New Launches</h3>
+    </section>
+
+    <div class="flex">
+        <div class="container1">
+            <div class="container2">
+                <strong>OnePlus 13s 5G (Pink, 256 GB) (12 GB RAM)</strong><br>
+                <br>
+                <p>EMI starting from ₹1,863/month.<br>
+                    ₹750 Off On Selected Bank Credit and Debit Card Transactions.<br>
+                    Get extra ₹5035 off (price inclusive of cashback/coupon)<br>
+                    Flat ₹10 Instant Cashback on Paytm UPI Trxns. Min Order Value ₹500. <br>
+                    Starts from <strong>₹29,580</strong></p><br>
+                <span>Sale is Live Now! </span><br>
+                <br>
+                <a href="#Buy Now" class="button"> Buy Now </a> <a href="#bag" class="bagbutton"
+                    data-name="OnePlus 13s 5G" data-price="29,580" data-image="OnePlus 13S.webp">Add to Bag</a>&nbsp;<a
+                    href="#wishlist" class="wishlistbutton">Add to Wishlist</a> &nbsp;
+                <a href="#learn more" class="under">Learn
+                    More</a>
+            </div>
+
+            <div class="container3">
+                <a href="#nothing3a"> <img src="Oneplus 13S.webp">
+                </a>
+            </div>
+        </div>
+
+        <div class="container1">
+            <div class="container2">
+                <strong> OnePlus Nord 5 5G (Marble Sands, 256 GB) (8 GB RAM)</strong><br>
+                <br>
+                From ₹29,999 incl.bank offers.<br>
+                Enjoy 3 months No-Cost EMI.<br>
+                <p>All cards Accepted!</p>
+                
+                Starts from <strong>₹31
+                    ,999</strong><br>
+                <br>
+                <span>Sale is Live Now! </span><br>
+                <br>
+                <a href="#Buy Now" class="button"> Buy Now </a> <a href="#bag" class="bagbutton"
+                    data-name="OnePlus Nord 5 5G" data-price="31,999" data-image="OnePlus nord 5.png">Add to
+                    Bag</a>&nbsp;<a href="#wishlist" class="wishlistbutton">Add to Wishlist</a> &nbsp;
+                <a href="#learn more" class="under">Learn
+                    More</a>
+            </div>
+
+            <div class="container3">
+                <a href="#Nord5"> <img src="Oneplus nord 5.png">
+                </a>
+            </div>
+        </div>
+
+        <div class="container1">
+            <div class="container2">
+                <strong>Samsung Galaxy S24 Ultra 5G (Titanium Black, 512 GB) (12 GB RAM)</strong><br>
+                <br>
+                No cost EMI ₹10,834/month.<br>
+                Get extra ₹10000 off (price inclusive of cashback/coupon).<br>
+                Flat ₹10 Instant Cashback on Paytm UPI Trxns.<br>
+                ₹750 Off On Selected Bank Credit and Debit Card Transactions.<br>
+                Up To ₹30 Instant Cashback on BHIM Payments App.<br>
+                Starts from <strong>₹1,29,999</strong><br>
+                <br>
+                <span>Sale is Live Now! </span><br>
+                <br>
+                <a href="#Buy Now" class="button"> Buy Now </a> <a href="#bag" class="bagbutton"
+                    data-name="Samsung Galaxy S24 Ultra 5G" data-price="1,29,999" data-image="Samsung S24 Ultra.jpg">Add
+                    to Bag</a>&nbsp;<a href="#wishlist" class="wishlistbutton">Add to Wishlist</a> &nbsp;
+                <a href="#learn more" class="under">Learn
+                    More</a>
+            </div>
+
+            <div class="container3">
+                <a href="#samsungs24"> <img src="Samsung S24 Ultra.jpg">
+                </a>
+            </div>
+        </div>
+
+        <div class="container1">
+            <div class="container2">
+                <strong> Oppo Reno 14 5G (Forest Green, 256 GB)</strong><br>
+                <br>
+                10% Instant Discount up to ₹5K<br>
+                No Cost EMI up to 6 Months<br>
+                Up to ₹5K Exchange Bonus + Free Gifts<br>
+                Starts from <strong>₹37,999</strong><br>
+                <br>
+                <span>Sale is Live Now! </span><br>
+                <br>
+                <a href="#Buy Now" class="button"> Buy Now </a> <a href="#bag" class="bagbutton"
+                    data-name="Oppo Reno 14 5G" data-price="37,999" data-image="Oppo Reno 14.png">Add to Bag</a>&nbsp;<a
+                    href="#wishlist" class="wishlistbutton">Add to Wishlist</a> &nbsp;
+                <a href="#learn more" class="under">Learn
+                    More</a>
+            </div>
+
+            <div class="container3">
+                <a href="#reno14"> <img src="Oppo Reno 14.png">
+                </a>
+            </div>
+        </div>
+
+        <div class="container1">
+            <div class="container2">
+                <strong>Realme 15 Pro 5G (Flowing Silver, 256 GB) (8 GB RAM)</strong><br>
+                <br>
+                Up to ₹3000 Bank Offer<br>
+                Instant Discount: Enjoy Flat Up To ₹3,000 Bank Offer Or ₹6,000 Exchange Bonus<br>
+                Exchange Bonus for Old Number Series Users: Upgrade And Get ₹8,000 Off.<br>
+                Starts from <strong>₹33,999</strong><br>
+                <br>
+                <span>Sale is Live Now! </span><br>
+                <br>
+                <a href="#Buy Now" class="button"> Buy Now </a> <a href="#bag" class="bagbutton"
+                    data-name="Realme 15 Pro 5G" data-price="33,999" data-image="Realme 15 pro.webp">Add to
+                    Bag</a>&nbsp;<a href="#wishlist" class="wishlistbutton">Add to Wishlist</a> &nbsp;
+                <a href="#learn more" class="under">Learn
+                    More</a>
+            </div>
+
+            <div class="container3">
+                <a href="#realme15pro"> <img src="Realme 15 pro.webp">
+                </a>
+            </div>
+        </div>
+
+        <div class="container1">
+            <div class="container2">
+                <strong> Apple Iphone 16 (Teal, 128GB)</strong><br>
+                <br>
+                EMI starting from ₹2,461/month<br>
+                Bank OfferFlat ₹10 Instant Cashback on Paytm UPI Trxns. Min Order Value ₹500. Valid once per Paytm
+                account<br>
+                Special PriceGet extra ₹9901 off (price inclusive of cashback/coupon)<br>
+                Starts from <strong>₹68,999</strong><br>
+                <br>
+                <span>Sale is Live Now! </span><br>
+                <br>
+                <a href="#Buy Now" class="button"> Buy Now </a> <a href="#bag" class="bagbutton"
+                    data-name="Apple Iphone 16" data-price="68,999" data-image="Iphone 16.webp">Add to Bag</a> &nbsp;<a
+                    href="#wishlist" class="wishlistbutton">Add to Wishlist</a>&nbsp;
+                <a href="#learn more" class="under">Learn
+                    More</a>
+            </div>
+
+            <div class="container3">
+                <a href="#iphone15"> <img src="Iphone 16.webp">
+                </a>
+            </div>
+        </div>
+
+
+
+        <div class="container1">
+            <div class="container2">
+                <strong>Vivo V50 5G (Rose Red, 256 GB) (8 GB RAM)</strong><br>
+                <br>
+                No cost EMI ₹12,333/month. Standard EMI also available<br>
+                ₹1500 Off On Selected Banks Credit Card Non EMI Transactions<br>
+                Flat ₹10 Instant Cashback on Paytm UPI Trxns. Min Order Value ₹500. Valid once per Paytm
+                account.<br>
+                Get extra ₹6000 off (price inclusive of cashback/coupon)<br>
+                Starts from <strong>₹34,999</strong><br>
+                <br>
+                <span>Sale is Live Now! </span><br>
+                <br>
+                <a href="#Buy Now" class="button"> Buy Now </a> <a href="#bag" class="bagbutton" data-name="Vivo V50 5G"
+                    data-price="34,999" data-image="Vivo V50.webp">Add to Bag</a>&nbsp;<a href="#wishlist"
+                    class="wishlistbutton">Add to Wishlist</a> &nbsp;
+                <a href="#learn more" class="under">Learn
+                    More</a>
+            </div>
+
+            <div class="container3">
+                <a href="#vivov50"> <img src="Vivo V50.webp">
+                </a>
+            </div>
+        </div>
+
+        <div class="container1">
+            <div class="container2">
+                <strong>Nothing Phone (3a) (Black, 128 GB) (8 GB RAM)</strong><br>
+                <br>
+                EMI starting from ₹879/month.
+                ₹2000 Off On IDFC Bank Credit Card Transactions.<br>
+                Get extra ₹3000 off (price inclusive of cashback/coupon).<br>
+                Starts from <strong>₹23,999</strong><br>
+                <br>
+                <span>Sale is Live Now! </span><br>
+                <br>
+                <a href="#Buy Now" class="button"> Buy Now </a> <a href="#bag" class="bagbutton"
+                    data-name="Nothing Phone (3a)" data-price="23,999" data-image="Nothing 3a.jpeg">Add to Bag</a>
+                &nbsp;<a href="#wishlist" class="wishlistbutton">Add to Wishlist</a>&nbsp;
+                <a href="#learn more" class="under">Learn
+                    More</a>
+            </div>
+
+            <div class="container3">
+                <a href="#nothing3a"> <img src="Nothing 3a.jpeg">
+                </a>
+            </div>
+        </div>
+
+        <div class="container1">
+            <div class="container2">
+                <strong>MOTOROLA Edge 60 Fusion 5G (PANTONE Amazonite, 256 GB) (8 GB RAM)</strong><br>
+                <br>
+                No cost EMI starting from ₹3,834/month
+                Flat ₹10 Instant Cashback on Paytm UPI Trxns.<br>
+                Get extra ₹3000 off (price inclusive of cashback/coupon).<br>
+                Starts from <strong>₹26,999</strong><br>
+                <br>
+                <span>Sale is Live Now! </span><br>
+                <br>
+                <a href="#Buy Now" class="button"> Buy Now </a> <a href="#bag" class="bagbutton"
+                    data-name="MOTOROLA Edge 60 Fusion 5G" data-price="26,999" data-image="Motorolo edge.jpg">Add to
+                    Bag</a> &nbsp;<a href="#wishlist" class="wishlistbutton">Add to Wishlist</a>&nbsp;
+                <a href="#learn more" class="under">Learn
+                    More</a>
+            </div>
+
+            <div class="container3">
+                <a href="#motorolo"> <img src="Motorolo edge.jpg">
+                </a>
+            </div>
+        </div>
+
+        <div class="container1">
+            <div class="container2">
+                <strong>REDMI Note 14 Pro 5G (Phantom Purple, 128 GB) (8 GB RAM)</strong><br>
+                <br>
+                No cost EMI starting from ₹2,556/month.<br>
+                Flat ₹10 Instant Cashback on Paytm UPI Trxns.<br>
+                Up To ₹30 Instant Cashback on BHIM Payments App. <br>
+                Get extra ₹1000 off (price inclusive of cashback/coupon).<br>
+                Starts from <strong>₹29,999</strong><br>
+                <br>
+                <span>Sale is Live Now! </span><br>
+                <br>
+                <a href="#Buy Now" class="button"> Buy Now </a> <a href="#bag" class="bagbutton"
+                    data-name="REDMI Note 14 Pro 5G" data-price="29,999" data-image="Redmi 14 pro.jpeg">Add to Bag</a>
+                &nbsp;<a href="#wishlist" class="wishlistbutton">Add to Wishlist</a>&nbsp;
+                <a href="#learn more" class="under">Learn
+                    More</a>
+            </div>
+
+            <div class="container3">
+                <a href="#redminote14"> <img src="Redmi 14 pro.jpeg">
+                </a>
+            </div>
+        </div>
+
+        <div class="container1">
+            <div class="container2">
+                <strong>POCO F7 5G (Phantom Black, 256 GB) (12 GB RAM)</strong><br>
+                <br>
+                No cost EMI starting from ₹3,556/month.<br>
+                Flat ₹10 Instant Cashback on Paytm UPI Trxns.<br>
+                5% cashback on HDFC Debit Card up to ₹750.<br>
+                Get extra ₹4000 off (price inclusive of cashback/coupon)<br>
+                Starts from <strong>₹31,999</strong><br>
+                <br>
+                <span>Sale is Live Now! </span><br>
+                <br>
+                <a href="#Buy Now" class="button"> Buy Now </a> <a href="#bag" class="bagbutton" data-name="POCO F7 5G"
+                    data-price="31,999" data-image="Poco F7.jpeg">Add to Bag</a> &nbsp;<a href="#wishlist"
+                    class="wishlistbutton">Add to Wishlist</a>&nbsp;
+                <a href="#learn more" class="under">Learn
+                    More</a>
+            </div>
+
+            <div class="container3">
+                <a href="#pocof7"> <img src="Poco F7.jpeg">
+                </a>
+            </div>
+        </div>
+
+        <div class="container1">
+            <div class="container2">
+                <strong>IQOO Neo 10R 5G (MoonKnight Titanium, 256 GB) (12 GB RAM)</strong><br>
+                <br>
+                EMI starting from ₹1,040/month.<br>
+                5% cashback on SBI Credit Card up to ₹750.<br>
+                Flat ₹10 Instant Cashback on Paytm UPI Trxns.<br>
+                5% cashback on HDFC Debit Card up to ₹750.<br>
+                Get extra ₹4000 off (price inclusive of cashback/coupon)<br>
+                Starts from <strong>₹29,580</strong><br>
+                <br>
+                <span>Sale is Live Now! </span><br>
+                <br>
+                <a href="#Buy Now" class="button"> Buy Now </a> <a href="#bag" class="bagbutton"
+                    data-name="IQOO Neo 10R 5G" data-price="29,580" data-image="Iqoo Neo 10R.jpeg">Add to Bag</a>
+                &nbsp;<a href="#wishlist" class="wishlistbutton">Add to Wishlist</a>&nbsp;
+                <a href="#learn more" class="under">Learn
+                    More</a>
+            </div>
+
+            <div class="container3">
+                <a href="#iqoo10r"> <img src="Iqoo Neo 10R.jpeg">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footertag">
+            <div class="bottom">
+                <div class="details">
+                    <h3>Get Support From Cybertron Mobiles </h3>
+                    <br>
+                    <p> 📞 Customer Care : +91-9992668747<br>
+                    <p> 📧 Email Support : support@cybertronmobiles.com<br></p>
+                    <p> 💬 Live Chat : Available 24/7 on our website<br></p>
+                    <p> 📍 Service Centers : Find your nearest service center <a href="#click" class="link">click
+                            here</a>
+                    </p>
+                </div>
+
+                <hr>
+
+                <div class="pay">
+
+                    <p><i class="bi bi-credit-card-fill"></i>&nbsp;Credit/Debit Card</p>
+                    <p><i class="bi bi-bank2"></i>&nbsp;NetBanking</p>
+                    <p><i class="bi bi-pie-chart-fill"></i>&nbsp;EMI</p>
+                    <p><i class="bi bi-wallet2"></i>&nbsp;Wallet</p>
+
+                </div>
+
+
+                <br>
+                <hr>
+                <br>
+
+                <div class="socialfont">
+                    <p>Follow Us On<br><br><i class="bi bi-facebook"></i> <i class="bi bi-instagram"></i><i
+                            class="bi bi-twitter-x"></i>
+                    </p>
+                </div>
+            </div>
+
+            <br>
+            <hr>
+            <br>
+
+            <div class="termdetails">
+                <p> Privacy Policy</p>
+                <hr>
+                <p> User Agreement</p>
+                <hr>
+                <p> Term of Sale</p>
+                <hr>
+                <p> E-Waste Management</p>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <p class="copyright">© 2025 Cybertron Mobile.All Rights Reserved.</p>
+
+        </div>
+    </footer>
+
+    <script>
+        const menu = document.querySelector('.dots');
+        const menuList = document.querySelector('nav ol');
+        menu.addEventListener('click', () => {
+            menuList.classList.toggle('showmenu');
+        });
+
+        
+        const addToBagButtons = document.querySelectorAll(".bagbutton");
+        const itemsList = document.getElementById("items");
+        const totalAmount = document.getElementById("totalAmount");
+        const sideBag = document.getElementById("sidebag");
+        const closeButton = document.getElementById("closebutton");
+        const bagIconCount = document.querySelector("#baggage2 .bi-0-circle"); 
+        const checkoutButton = document.getElementById("chckbtn");
+
+        let cart = [];
+
+
+        addToBagButtons.forEach(button => {
+            button.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                const name = this.getAttribute("data-name");
+                const price = parseInt(this.getAttribute("data-price").replace(/,/g, ""));
+                const image = this.getAttribute("data-image");
+
+                const product = { name, price, image };
+
+                cart.push(product);
+
+                updateCart();
+
+                alert(`${name} added to your bag!`);
+            });
+        });
+
+
+        function updateCart() {
+            itemsList.innerHTML = ""; 
+
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                total += item.price;
+
+                const li = document.createElement("li");
+                li.style.margin = "10px 0";
+                li.innerHTML = `
+            <img src="${item.image}" width="50" height="50" style="border-radius:5px;">
+            <strong>${item.name}</strong> - Rs.${item.price}
+            <button onclick="removeItem(${index})"
+                style="margin-left:10px; padding:3px 8px; background-color:red; color:white; border:none; border-radius:5px; cursor:pointer;">
+                X
+            </button>`;
+
+                itemsList.appendChild(li);
+            });
+
+            totalAmount.innerText = `Total: Rs.${total}`;
+
+            bagIconCount.classList.remove("bi-0-circle");
+            bagIconCount.innerText = cart.length;
+        }
+ 
+        function removeItem(index) {
+            cart.splice(index, 1); 
+            updateCart(); 
+        }
+
+        const bagLink = document.getElementById("baggage2");
+        bagLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            sideBag.classList.add("open");
+        });
+
+        closeButton.addEventListener("click", () => {
+            sideBag.classList.remove("open");
+        });
+
+ 
+        checkoutButton.addEventListener("click", () => {
+            if (cart.length === 0) {
+                alert("Your bag is empty!");
+            } else {
+                alert("Your order has been placed successfully!");
+                cart = [];
+                updateCart();
+            }
+        });
+
+
+        const toggle = document.getElementById("darkMode");
+        toggle.addEventListener("click", () => {
+            document.body.classList.toggle("dark");
+        });
+
+
+    </script>
+
+
+
+</body>
+
+</html>
